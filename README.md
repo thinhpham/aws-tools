@@ -1,5 +1,5 @@
 # aws-tools
-Just a small collection of useful scripts to manage Amazon AWS
+Collection of Python scripts to manage Amazon AWS
 
 ## Installation
 * Clone the repository
@@ -11,6 +11,7 @@ Just a small collection of useful scripts to manage Amazon AWS
 * It's pretty self explanatory what each script does. Run the script without parameter to get the usage
 
 ## Notes
+* Need Python 2.7x
 * Make you've configured the "config" and "credentials" files before using these scripts. Check for the existence of the ".aws" folder if you're not sure
 * The ".aws" folder can be created either manually or by using "aws configure". It can be located in the following locations
   * On Linux/Mac: ~/.aws
