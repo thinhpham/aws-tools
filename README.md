@@ -1,5 +1,5 @@
 # aws-tools
-Just a small collection of scripts i wrote to quickly do stuff with Amazon AWS
+Just a small collection of useful scripts to manage Amazon AWS
 
 ## Installation
 * Clone the repository
