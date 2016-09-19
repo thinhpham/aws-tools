@@ -2,7 +2,8 @@
 Useful tools to manage Amazon AWS
 
 ## Notes
-* Make sure you've configure the ".aws" folder either by hand or using "aws configure" to setup default region and API credentials
+* Make you've configured the "config" and "credentials" files before using these scripts. Check for the existence of the ".aws" folder if you're not sure
+* The ".aws" folder can be created either manually or by using "aws configure"
 * The ".aws" folder is normally located in the following locations:
   * On Linux/Mac: ~/.aws
   * On Windows: %USERPROFILE%\.aws (Normally C:\Users\username\.aws)
