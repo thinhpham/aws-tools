@@ -6,5 +6,5 @@ Useful tools to manage Amazon AWS
 * The ".aws" folder can be created either manually or by using "aws configure"
 * The ".aws" folder is normally located in the following locations:
   * On Linux/Mac: ~/.aws
-  * On Windows: %USERPROFILE%\\.aws (Normally C:\Users\username\.aws)
+  * On Windows: %USERPROFILE%\\.aws (Normally C:\\Users\\USERNAME\\.aws)
 * "aws configure" requires the [AWS Command Line Interface](https://aws.amazon.com/cli)
