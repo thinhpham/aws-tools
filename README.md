@@ -37,7 +37,7 @@ Collection of Python scripts to manage Amazon AWS
         
         [profile dev]
         output = xml
-        region = us-east-2
+        region = us-west-1
         
         [profile prod]
         output = json
