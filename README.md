@@ -19,12 +19,11 @@ Collection of Python scripts to manage Amazon AWS
 
 ## Notes
 * Requires Python
-* Make sure you've configured the "config" and "credentials" files before using these scripts. Check for the existence of the ".aws" folder if you're not sure
-* The ".aws" folder can be created either manually or by using "aws configure". It can be located in the following locations
+* Make sure you've configured your credentials and default region before using these scripts. Check for the existence of the ".aws" folder if you're not sure. The folder can be located in the following locations:
     * On Linux/Mac: ~/.aws
     * On Windows: %USERPROFILE%\\.aws (Normally C:\\Users\\USERNAME\\.aws)
-* "aws configure" requires the [AWS Command Line Interface](https://aws.amazon.com/cli)
-* Below is an example of both the "config" and "credentials" files if you want to create them manually
+* You can create the ".aws" folder either manually or automatically by using the [AWS Command Line Interface](https://aws.amazon.com/cli)'s interactive "configure" command
+* Below is an example of both the "config" and "credentials" files inside the ".aws" folder if you want to create them manually
     * ~/.aws/config
         ```ini
         [default]
