@@ -4,7 +4,7 @@ from aws_util import Ec2Util
 
 if len(sys.argv) < 3:
     print('Usage: %s (instance_tag_or_id) (instance_type)' % sys.argv[0])
-    sys.exit(-1)
+    sys.exit(1)
 
 id_or_tag = sys.argv[1]
 new_instance_type = sys.argv[2]

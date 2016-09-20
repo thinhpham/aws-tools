@@ -1,7 +1,13 @@
 #!/usr/bin/env python
+import sys
 import boto3
 
-ec2 = boto3.resource('ec2')
+ec2 = None
+if len(sys.argv) <= 1:
+    ec2 = boto3.resource('ec2')
+else:
+    session = boto3.Session(profile_name=sys.argv[1])
+    ec2 = session.resource('ec2')
 
 for i in ec2.instances.all():
     tag_name = 'UNKNOWN'
