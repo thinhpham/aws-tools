@@ -2,22 +2,20 @@
 Collection of Python scripts to manage Amazon AWS
 
 ## Installation
-
-    ```bash
+```bash
     git clone https://github.com/thinhpham/aws-tools.git
     cd aws-tools
     pip install -r requirements.txt
-    ```
+```
 
 ## Usage
 * It's pretty self-explanatory what each script does. Run the script without parameter to get the usage
 * Several of the scripts also accept a profile name if provided as a second parameter. They'll use the [default] profile if nothing is supplied. For example:
-
-    ```bash
+```bash
     python ec2_instance_list.py
     python ec2_instance_list.py dev
     python ec2_instance_list.py prod
-    ```
+```
 
 ## Notes
 * Requires Python
@@ -26,9 +24,10 @@ Collection of Python scripts to manage Amazon AWS
     * On Windows: %USERPROFILE%\\.aws (Normally C:\\Users\\USERNAME\\.aws)
 * You can create the ".aws" folder either manually or automatically by using the [AWS Command Line Interface](https://aws.amazon.com/cli)'s interactive "configure" command
 * Automatic configuration. Just follow the prompts and it will generate configuration files in the correct locations for you
-    ```bash
+```bash
     aws configure
-    ```
+```
+
 * Manual configuration. See below for an example of both the "config" and "credentials" files inside the ".aws" folder
     * ~/.aws/config
         ```ini
