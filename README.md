@@ -2,6 +2,7 @@
 Collection of Python scripts to manage Amazon AWS
 
 ## Installation
+
     ```bash
     git clone https://github.com/thinhpham/aws-tools.git
     cd aws-tools
@@ -11,6 +12,7 @@ Collection of Python scripts to manage Amazon AWS
 ## Usage
 * It's pretty self-explanatory what each script does. Run the script without parameter to get the usage
 * Several of the scripts also accept a profile name if provided as a second parameter. They'll use the [default] profile if nothing is supplied. For example:
+
     ```bash
     python ec2_instance_list.py
     python ec2_instance_list.py dev
