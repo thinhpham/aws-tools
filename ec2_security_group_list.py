@@ -1,17 +1,16 @@
 #!/usr/bin/env python
-import boto
+import boto3
 
 print 'Security group information:\n'
 
-ec2 = boto.connect_ec2()
-sgs = ec2.get_all_security_groups()
+ec2 = boto3.resource('ec2')
+sgs = ec2.security_groups.all()
 
 for sg in sgs:
-    instances = sg.instances()
-    print 'id: %s, name: %s, count: %s' % (sg.id, sg.name, len(instances))
+    tag_name = sg.group_name
+    if sg.tags is not None:
+        for tag in sg.tags:
+            if tag['Key'] == 'Name' and tag['Value'] != '':
+                tag_name = tag['Value']
 
-    for inst in instances:
-        tag_name = 'UNKNOWN'
-        if inst.tags is not None and 'Name' in inst.tags:
-            tag_name = inst.tags['Name']
-        print '\tid: %s, name: %s' % (inst.id, tag_name)
+    print 'id: %s, name: %s, vpc_id: %s' % (sg.id, tag_name, sg.vpc_id)

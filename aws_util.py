@@ -1,9 +1,9 @@
 import boto3
 
 class Ec2Util(object):
-    def __init__(self):
-        self.ec2_client = boto3.client('ec2')
-        self.ec2_resource = boto3.resource('ec2')
+    def __init__(self, profile='default'):
+        self.ec2_client = boto3.Session(profile_name=profile).client('ec2')
+        self.ec2_resource = boto3.Session(profile_name=profile).resource('ec2')
 
     def _get_instance_by_id(self, instance_id):
         for i in self.ec2_resource.instances.all():
