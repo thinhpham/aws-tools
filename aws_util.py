@@ -62,8 +62,8 @@ class Ec2Util(object):
 
 
 class ElbUtil(object):
-    def __init__(self):
-        self.elb_client = boto3.client('elb')
+    def __init__(self, profile='default'):
+        self.elb_client = boto3.Session(profile_name=profile).client('elb')
 
     def get_elb(self, elb_name):
         res = self.elb_client.describe_load_balancers(LoadBalancerNames=[elb_name])
