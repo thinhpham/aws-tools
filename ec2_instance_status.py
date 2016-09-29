@@ -5,7 +5,7 @@ from aws_util import Ec2Util
 
 @click.command()
 @click.option('-p', '--profile', default='default', help='Profile name to use.')
-@click.argument('id_or_tag')
+@click.argument('id_or_tag', required=True)
 def cli(profile, id_or_tag):
     if id_or_tag is not None:
         ec2 = Ec2Util(profile)

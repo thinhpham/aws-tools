@@ -5,8 +5,8 @@ from aws_util import Ec2Util
 
 @click.command()
 @click.option('-p', '--profile', default='default', help='Profile name to use.')
-@click.argument('id_or_tag')
-@click.argument('new_instance_type')
+@click.argument('id_or_tag', required=True)
+@click.argument('new_instance_type', required=True)
 def cli(profile, id_or_tag, new_instance_type):
     ec2 = Ec2Util(profile)
     instance = ec2.get_instance(id_or_tag)
