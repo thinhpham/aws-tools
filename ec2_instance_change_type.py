@@ -19,7 +19,9 @@ def cli(profile, id_or_tag, new_instance_type):
         if new_instance_type != instance.instance_type:
             ec2.change_instance_type(id_or_tag, new_instance_type)
             instance.reload()
-        print('Instance type changed to %s successfully' % instance.instance_type)
+            print('Instance type changed to %s successfully' % instance.instance_type)
+        else:
+            print('Current instance type is the same as new type. No need to do anything.')
     else:
         print('Error. Cannot find instance')
 
