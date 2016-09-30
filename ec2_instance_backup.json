@@ -1,0 +1,6 @@
+{
+    "backupList": ["instance_or_tag_1", "instance_or_tag_2", "instance_or_tag_N"],
+    "stopInstanceBeforeBackup": true,
+    "deleteOldSnapshots": true,
+    "copiesToKeep": 7
+}

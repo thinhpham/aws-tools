@@ -17,6 +17,9 @@ class Ec2Util(object):
                     if tag['Key'] == 'Name' and tag['Value'] == tag_name:
                         return i
 
+    def get_all_instances(self):
+        return self.ec2_resource.instances.all()
+        
     def get_instance(self, id_or_tag):
         instance = self._get_instance_by_tag_name(id_or_tag)
         if instance is None:
