@@ -66,12 +66,14 @@ def cli():
     with open(config_file) as json_file:
         json_config = json.load(json_file)
         backup_list = json_config['backupList']
+        no_stop_list = json_config['noStopList']
         stop_instance_before_backup = json_config['stopInstanceBeforeBackup']
         delete_old_snapshots = json_config['deleteOldSnapshots']
         copies_to_keep = json_config['copiesToKeep']
 
     log_util.info('Backup will use the following options:')
     log_util.info('    backupList: %s' % backup_list)
+    log_util.info('    noStopList: %s' % no_stop_list)
     log_util.info('    stopInstanceBeforeBackup: %s' % stop_instance_before_backup)
     log_util.info('    deleteOldSnapshots: %s' % delete_old_snapshots)
     log_util.info('    copiesToKeep: %s' % copies_to_keep)
@@ -95,9 +97,10 @@ def cli():
         if found:
             log_util.info('Backing up all volumes for instance %s' % instance_name)
 
-            # If stop_instance_before_backup == True and instance is running, we need to stop it first
+            # If stop_instance_before_backup == True and instance is running and instance is
+            # not in the no_stop_list, we need to stop it before performing backup
             cur_instance_state = instance.state['Name']
-            if stop_instance_before_backup and cur_instance_state == 'running':
+            if stop_instance_before_backup and cur_instance_state == 'running' and instance_name not in no_stop_list:
                 instance.stop()
                 instance.wait_until_stopped()
 

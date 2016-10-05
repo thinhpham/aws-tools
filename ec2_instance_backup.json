@@ -1,5 +1,6 @@
 {
-    "backupList": ["instance_or_tag_1", "instance_or_tag_2", "instance_or_tag_N"],
+    "backupList": ["list of instance id or tag name to backup"],
+    "noStopList": ["list of instance id or tag name you don't want to stop before backing up"],
     "stopInstanceBeforeBackup": true,
     "deleteOldSnapshots": true,
     "copiesToKeep": 7
